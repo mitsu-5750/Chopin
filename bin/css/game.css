@@ -1,0 +1,126 @@
+html {
+	font-size: 1.1vw;
+}
+
+@media (min-width: 55vh) {
+	html {
+		font-size: 0.6vh;
+	}
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: '游ゴシック', sans-serif;
+}
+
+body {
+	background-image: url("../img/back.jpg");
+	background-size: auto 100vh;
+	background-color: rgba(0, 0, 0, 0.7);
+	background-blend-mode: darken;
+	background-position: center 0;
+}
+
+
+#MAIN {
+	position: fixed;
+	width: 90rem;
+	height: 160rem;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	margin: auto;
+}
+
+#BACK_JACKET {
+	position: absolute;
+	width: 50rem;
+	height: 50rem;
+	top: 0;
+	right: 0;
+	bottom: 10rem;
+	left: 0;
+	margin: auto;
+	opacity: .4;
+	object-fit: cover;
+	transform: perspective(5rem) rotateX(-.5deg);
+}
+
+#LANE {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	display: flex;
+	width: 90rem;
+	margin: auto;
+	transform-origin: top;
+	transform: perspective(12rem) rotateX(5deg) scale(.5);
+}
+
+.lines {
+	box-sizing: border-box;
+	width: 22.5rem;
+	height: 140rem;
+	/* border-right: solid #fff 0.01rem;
+	border-left: solid #fff 0.01rem; */
+	z-index: 10;
+}
+
+.notes {
+	position: absolute;
+	bottom: 110%;
+	width: 22.5rem;
+	transform: scaleY(0.5) translateY(-30rem);
+}
+
+#EFFECT {
+	position: absolute;
+	bottom: 23rem;
+	display: flex;
+	width: 90rem;
+}
+
+.effects {
+	width: 22.5rem;
+	opacity: 0;
+	transform: scale(2.5);
+	will-change: trasform, opacity;
+}
+
+@keyframes noteEffect {
+	0% {
+		transform: scale(2.5);
+		opacity: 1;
+	}
+
+	100% {
+		transform: scale(0);
+		opacity: 0;
+	}
+}
+
+.noteEffect {
+	animation: noteEffect .5s alternate 1 running;
+}
+
+#JUDGE_LINE {
+	position: absolute;
+	bottom: 30rem;
+	width: 100%;
+	height: 1px;
+	z-index: 10;
+	background-color: #fff;
+}
+
+#COMBO {
+	position: absolute;
+	bottom: 10rem;
+	font-size: 5rem;
+	color: #fff;
+	width: 100%;
+	text-align: center;
+}
