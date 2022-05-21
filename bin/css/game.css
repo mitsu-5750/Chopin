@@ -49,7 +49,7 @@ body {
 	opacity: .4;
 	object-fit: cover;
 	transform: perspective(5rem) rotateY(-3deg) rotateZ(90deg);
-	z-index: 1;
+	z-index: -1;
 }
 
 #LANE {
