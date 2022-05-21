@@ -1,10 +1,10 @@
 html {
-	font-size: 1.1vw;
+	font-size: 3.4vw;
 }
 
-@media (min-width: 55vh) {
+@media (min-width: 75vh) {
 	html {
-		font-size: 0.6vh;
+		font-size: 2.5vh;
 	}
 }
 
@@ -15,18 +15,13 @@ html {
 }
 
 body {
-	background-image: url("../img/back.jpg");
-	background-size: auto 100vh;
-	background-color: rgba(0, 0, 0, 0.7);
-	background-blend-mode: darken;
-	background-position: center 0;
+	background-color: #000;
 }
-
 
 #MAIN {
 	position: fixed;
-	width: 90rem;
-	height: 160rem;
+	width: 30rem;
+	height: 40rem;
 	top: 0;
 	bottom: 0;
 	right: 0;
@@ -34,18 +29,26 @@ body {
 	margin: auto;
 }
 
+#BACK {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	opacity: 0.3;
+	transform: rotate(90deg);
+}
+
 #BACK_JACKET {
 	position: absolute;
-	width: 50rem;
-	height: 50rem;
+	width: 10rem;
+	height: 10rem;
 	top: 0;
 	right: 0;
-	bottom: 10rem;
+	bottom: 0;
 	left: 0;
 	margin: auto;
 	opacity: .4;
 	object-fit: cover;
-	transform: perspective(5rem) rotateX(-.5deg);
+	transform: perspective(5rem) rotateY(-3deg) rotateZ(90deg);
 }
 
 #LANE {
@@ -54,51 +57,53 @@ body {
 	right: 0;
 	bottom: 0;
 	left: 0;
-	display: flex;
-	width: 90rem;
+	height: 40rem;
 	margin: auto;
-	transform-origin: top;
-	transform: perspective(12rem) rotateX(5deg) scale(.5);
+	transform-origin: left;
+	transform: perspective(12rem) rotateY(18deg) scaleX(5);
 }
 
 .lines {
 	box-sizing: border-box;
-	width: 22.5rem;
-	height: 140rem;
-	/* border-right: solid #fff 0.01rem;
-	border-left: solid #fff 0.01rem; */
+	width: 30rem;
+	height: 10rem;
+	border-top: solid #fff 0.01rem;
+	border-bottom: solid #fff 0.01rem;
 	z-index: 10;
 }
 
 .notes {
 	position: absolute;
-	bottom: 110%;
-	width: 22.5rem;
-	transform: scaleY(0.5) translateY(-30rem);
+	left: 110%;
+	width: 10rem;
+	transform: rotate(90deg) scaleY(0.3) translateY(12.2rem);
 }
 
 #EFFECT {
 	position: absolute;
-	bottom: 23rem;
-	display: flex;
-	width: 90rem;
+	height: 36rem;
+	top: 0;
+	bottom: 0;
+	left: -2.5rem;
+	margin: auto;
 }
 
 .effects {
-	width: 22.5rem;
+	display: block;
+	height: 9rem;
 	opacity: 0;
-	transform: scale(2.5);
+	transform: scale(1) rotate(90deg);
 	will-change: trasform, opacity;
 }
 
 @keyframes noteEffect {
 	0% {
-		transform: scale(2.5);
+		transform: scale(2.5) rotate(90deg);
 		opacity: 1;
 	}
 
 	100% {
-		transform: scale(0);
+		transform: scale(0) rotate(90deg);
 		opacity: 0;
 	}
 }
@@ -109,18 +114,20 @@ body {
 
 #JUDGE_LINE {
 	position: absolute;
-	bottom: 30rem;
-	width: 100%;
-	height: 1px;
+	left: 5rem;
+	height: 100%;
+	width: 1px;
 	z-index: 10;
 	background-color: #fff;
 }
 
 #COMBO {
 	position: absolute;
-	bottom: 10rem;
-	font-size: 5rem;
+	left: 5rem;
+	top: 35rem;
+	font-size: 3rem;
 	color: #fff;
 	width: 100%;
 	text-align: center;
+	transform: rotate(90deg);
 }

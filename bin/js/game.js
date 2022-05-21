@@ -46,7 +46,7 @@ class Note {
 
 	fall() {
 		this.y -= 1.8;
-		this.el.style.bottom = `${this.y}%`;
+		this.el.style.left = `${this.y}%`;
 
 		if (this.y < -10) {
 			this.remove(this.lane);
@@ -158,24 +158,24 @@ function operation() {
 
 		for (let p of event.changedTouches) {
 			let pos = getPos(p);
-			let mainWidth = MAIN.clientWidth / 4;
+			let mainHeight = MAIN.clientHeight / 4;
 
-			if (pos['x'] > mainWidth * 0 && pos['x'] < mainWidth * 1) {
+			if (pos['y'] > mainHeight * 0 && pos['y'] < mainHeight * 1) {
 				judge(0);
 				// TapEffect(0);
 			}
 
-			if (pos['x'] > mainWidth * 1 && pos['x'] < mainWidth * 2) {
+			if (pos['y'] > mainHeight * 1 && pos['y'] < mainHeight * 2) {
 				judge(1);
 				// TapEffect(1);
 			}
 
-			if (pos['x'] > mainWidth * 2 && pos['x'] < mainWidth * 3) {
+			if (pos['y'] > mainHeight * 2 && pos['y'] < mainHeight * 3) {
 				judge(2);
 				// TapEffect(2);
 			}
 
-			if (pos['x'] > mainWidth * 3 && pos['x'] < mainWidth * 4) {
+			if (pos['y'] > mainHeight * 3 && pos['y'] < mainHeight * 4) {
 				judge(3);
 				// TapEffect(3);
 			}
